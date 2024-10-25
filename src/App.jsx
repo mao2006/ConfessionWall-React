@@ -20,7 +20,7 @@ function App() {
         <Header className='bg-transparent'>
           <p className='text-white text-xl mt-10 ml-2'>表白墙</p>
         </Header>
-        <Content className='relative h-screen'>
+        <Content>
           <Outlet></Outlet>
         </Content>
       </Layout>
