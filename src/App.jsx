@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { Layout, } from 'antd'
-import { useNavigate, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 // import { update } from './stores/stores/tokenstore'
 // import { useDispatch,useSelector } from 'react-redux'
 
@@ -10,8 +9,8 @@ const { Header, Content } = Layout;
 
 
 function App() {
-  const [count, setCount] = useState(0)
-  const navigate = useNavigate();
+  // const [count, setCount] = useState(0)
+  // const navigate = useNavigate();
 
   
   

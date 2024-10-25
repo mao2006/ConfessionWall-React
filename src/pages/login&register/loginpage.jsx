@@ -1,15 +1,27 @@
 import { Card, Button, Form, Input, message } from 'antd';
 import loginAPI from "../../apis/service/LoginApi";
-import Password from "antd/es/input/Password";
+import { useNavigate } from 'react-router-dom';
+import { update } from '../../stores/stores/tokenstore';
+import {  useDispatch } from 'react-redux';
 
 
 const LoginPage = () => {
-    
+    const navigate = useNavigate()
     const [messageApi, contextHolder] = message.useMessage();
+
+    // const token = useSelector(state => state.token.token)
+    const diapatch = useDispatch()
+    
+    // console.log(token.payload)
+
     const onFinish = async (values) => {
-        const {response} = await loginAPI(values.username,values,Password)
+        // console.log(values.username,values.password)
+        const {response} = await loginAPI(values.username,values.password)
         if(response.data.code===200){
-            message.success("请求成功")
+            message.success("登录成功")
+            diapatch(update(response.data.data.token))
+            navigate('/main')
+            // console.log(token.payload)
         }else{
             message.error(response.data.msg)
         }
