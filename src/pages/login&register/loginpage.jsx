@@ -1,5 +1,5 @@
 import { Card, Button, Form, Input, message } from 'antd';
-import loginAPI from "../../apis/service/LoginApi";
+import { loginAPI } from '../../apis';
 import { useNavigate } from 'react-router-dom';
 import { update } from '../../stores/stores/tokenstore';
 import {  useDispatch } from 'react-redux';
@@ -91,6 +91,10 @@ const LoginPage = () => {
                             </Button>
                         </Form.Item>
                     </Form>
+                    <div className='absolute right-0 bottom-0 underline text-blue-400' 
+                    onClick={() => navigate('/register')}>
+                        没有账号?点我注册
+                    </div>
                 </Card>
             </div>
         </>
