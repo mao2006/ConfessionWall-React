@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Layout, Button } from 'antd'
-import { useNavigate } from 'react-router-dom'
+import { Layout, } from 'antd'
+import { useNavigate, Outlet } from 'react-router-dom'
+// import { update } from './stores/stores/tokenstore'
+// import { useDispatch,useSelector } from 'react-redux'
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Content } = Layout;
 
 
 
@@ -12,29 +12,19 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   const [count, setCount] = useState(0)
   const navigate = useNavigate();
+
+  
+  
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='text-red-500'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Button onClick={() => navigate('/about')}>clickme</Button>
+      <Layout className='bg-[url("./assets/background.jpg")] bg-contail bg-center h-100vh'>
+        <Header className='bg-transparent'>
+          <p className='text-white text-xl mt-10 ml-2'>表白墙</p>
+        </Header>
+        <Content className='relative h-screen'>
+          <Outlet></Outlet>
+        </Content>
+      </Layout>
     </>
   )
 }

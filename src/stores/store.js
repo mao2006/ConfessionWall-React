@@ -1,7 +1,7 @@
 // store.js
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore } from 'redux-persist';
-import tokenReducer from './tokenstore'; 
+import tokenReducer from './stores/tokenstore'; 
 
 // 创建 Redux store
 const store = configureStore({
