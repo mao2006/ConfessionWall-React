@@ -1,5 +1,5 @@
 import { Card, Button, Form, Input, message } from 'antd';
-import { RegisterApi } from '../../apis';
+import { useRegisterApi  } from '../../apis';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ const RegisterPage = () => {
     const [messageApi, contextHolder] = message.useMessage();
 
     const onFinish = async (values) => {
-        const {response} = await RegisterApi(values.username,values.password)
+        const {response} = await useRegisterApi(values.username,values.password)
         if(response.data.code===200){
             navigate('/login')
             message.success("注册成功")

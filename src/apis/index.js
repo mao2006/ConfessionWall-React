@@ -1,7 +1,9 @@
-import loginAPI from "./service/LoginApi";
-import RegisterApi from "./service/RegisterApi";
+import useLoginAPI from "./service/LoginApi";
+import useRegisterApi from "./service/RegisterApi";
+import getAllPost from "./service/GetAllPost";
 
 export {
-    loginAPI,
-    RegisterApi
+    useLoginAPI,
+    useRegisterApi,
+    getAllPost
 }

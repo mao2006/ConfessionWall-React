@@ -53,7 +53,7 @@ const MainPage = () => {
                     <MainMenu />
                     <LogoutButton />
                 </Sider>
-                <Content className="mt-20 ml-10 h-60vh">
+                <Content className="mt-20 ml-10 h-60vh overflow-auto">
                     <Outlet />
                 </Content>
             </Layout>

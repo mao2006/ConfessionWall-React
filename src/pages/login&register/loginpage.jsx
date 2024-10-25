@@ -1,5 +1,5 @@
 import { Card, Button, Form, Input, message } from 'antd';
-import { loginAPI } from '../../apis';
+import { useLoginAPI } from '../../apis';
 import { useNavigate } from 'react-router-dom';
 import { update } from '../../stores/stores/tokenstore';
 import {  useDispatch } from 'react-redux';
@@ -16,7 +16,7 @@ const LoginPage = () => {
 
     const onFinish = async (values) => {
         // console.log(values.username,values.password)
-        const {response} = await loginAPI(values.username,values.password)
+        const {response} = await useLoginAPI(values.username,values.password)
         if(response.data.code===200){
             message.success("登录成功")
             diapatch(update(response.data.data.token))

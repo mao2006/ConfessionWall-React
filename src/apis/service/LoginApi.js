@@ -1,6 +1,6 @@
 import { fetchInstance } from "../fetch";
 
-const loginAPI = async(username,password) => {
+const useLoginAPI = async(username,password) => {
     const option = {
         url: '/api/user/login',
         method: 'post',
@@ -14,4 +14,4 @@ const loginAPI = async(username,password) => {
     return response
 }
 
-export default loginAPI
+export default useLoginAPI

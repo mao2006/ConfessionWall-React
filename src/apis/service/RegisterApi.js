@@ -1,6 +1,6 @@
 import { fetchInstance } from "../fetch";
 
-const RegisterApi = async (username, password) => {
+const useRegisterApi = async (username, password) => {
     const option = {
         url: '/api/user/reg',
         method: 'post',
@@ -15,4 +15,4 @@ const RegisterApi = async (username, password) => {
     return response
 }
 
-export default RegisterApi
+export default useRegisterApi
